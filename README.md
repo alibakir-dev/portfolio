@@ -6,6 +6,6 @@ Personal portfolio site built with plain HTML, CSS and vanilla JavaScript, to be
 
 Work in progress
 
-## Design Referance
+## Design Reference
 
 [design spec](design/spec.md)
