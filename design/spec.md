@@ -114,12 +114,37 @@ Same in light and dark. The design does not use a clean scale; values are measur
 
 ## Radii
 
-### Light
+Same in light and dark.
 
-### Dark
+- keycap (logo, nav, theme toggle, buttons): 6px
+- tech key (SQL, API, SSJS, TS): 10px
+- case study card, building card, skill group panel: 10px
+- section number badge: 4px
+- tag chip: 4px
+- skill key: 6px
+- "In progress" badge: 999px (pill)
+- theme icon: 50% (circle)
 
 ## Shadows
 
+All shadows are solid offsets with no blur and no spread. Format: offset-x offset-y blur spread color.
+
 ### Light
 
+- keycap (logo, nav, theme toggle): 0 4px 0 0 #222618
+- disabled keycap: 0 3px 0 0 #77786F
+- tech key (SQL, API, SSJS): 0 6px 0 0 #222618
+- section number badge: 0 3px 0 0 #222618
+- case study card, building card: 0 6px 0 0 #596653
+
 ### Dark
+
+- keycap (logo, nav, theme toggle): 0 4px 0 0 #F1EEE4
+- disabled keycap: 0 3px 0 0 #11130E
+- tech key (SQL, API, SSJS): 0 6px 0 0 #222618
+- section number badge: 0 3px 0 0 #222618
+- case study card, building card: 0 6px 0 0 #596653
+
+### No shadow
+
+- tech key "TS learning" (dashed border), skill group panels, tag chips, skill keys, progress badge
