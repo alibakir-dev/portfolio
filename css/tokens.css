@@ -1,4 +1,5 @@
 :root {
+    /* Color */
     --color-page-bg: #F0ECE2;
     --color-page-bg-alt: #DDD7CA;
     --color-text: #222618;
@@ -14,4 +15,19 @@
     --color-orange-accent: #F26E22;
     --color-orange-accent-dark: #A94310;
     --color-grid-line: rgba(34, 38, 24, 0.035);
+
+    /* Font Family */
+    --font-mono: "Roboto Mono", monospace;
+
+    /* Font Weight */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Font Size */
+    --font-size-body: 1rem;
+    --font-size-h1: clamp(3.25rem, 6.72vw, 6.5rem);
+    --font-size-h2: clamp(1.6875rem, 4vw, 2.75rem);
+    --font-size-h3: clamp(1.375rem, 3.2vw, 1.875rem);
 }

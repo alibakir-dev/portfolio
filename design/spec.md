@@ -69,6 +69,23 @@ Same in light and dark. Format: size: weights.
 - 90px: 400
 - 104px: 700
 
+### Roles
+
+Fluid sizes use clamp(min mobile, vw, max desktop). Format: size / line-height / weight / letter-spacing. Source of truth for tokens: css/tokens.css
+
+- body: 1rem / 1.5 / 400 / normal
+- h1: clamp(3.25rem, 6.72vw, 6.5rem) / 0.98 / 700 / -0.075em
+- h2: clamp(1.6875rem, 4vw, 2.75rem) / 1.12 / 400 / -0.055em
+- h3: clamp(1.375rem, 3.2vw, 1.875rem) / 1.25 / 400 / -0.045em
+- h4 (column label): 0.625rem / 1.5 / 400 / 0.08em / uppercase
+- eyebrow / overline: 0.6875rem / 1.5 / 700 / 0.14em / uppercase
+- hero subtitle: 1.125rem / 1.4 / 700 / -0.04em (desktop 1.5625rem)
+- hero intro: 0.9375rem / 1.7 / 400 / normal
+- about text: 1.1875rem / 1.75 / 500 / normal
+- case summary: 0.8125rem / 1.65 / 400 / normal
+- tag: 0.5625rem / 1.5 / 700 / normal
+- keycap: 0.9375rem / 1.5 / 700 / -0.08em
+
 ## Spacing
 
 Same in light and dark. The design does not use a clean scale; values are measured per role.
