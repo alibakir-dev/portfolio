@@ -1,0 +1,58 @@
+.keycap {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5625rem 0.75rem;
+    border: 1px solid var(--color-keycap-shadow);
+    border-radius: var(--radius-small);
+    font-family: inherit;
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: ;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-keycap-text);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-key);
+    transition: var(--transition-key);
+    cursor: pointer;
+}
+
+.keycap:hover {
+    background-color: var(--color-sage-surface);
+}
+
+.keycap:active {
+    transform: translateY(2px);
+    box-shadow: var(--shadow-key-pressed);
+}
+
+.keycap:focus-visible {
+    outline: 2px solid var(--color-orange-accent);
+    outline-offset: 4px;
+}
+
+.keycap--primary,
+.keycap--secondary {
+    padding: 0.75rem 1.125rem;
+}
+
+.keycap--primary {
+    background-color: var(--color-orange-accent);
+}
+
+.keycap--secondary {
+    background-color: var(--color-sage);
+}
+
+.keycap--primary:hover,
+.keycap--secondary:hover {
+    filter: brightness(1.04);
+}
+
+.keycap--primary:hover {
+    background-color: var(--color-orange-accent);
+}
+
+.keycap--secondary:hover {
+    background-color: var(--color-sage);
+}

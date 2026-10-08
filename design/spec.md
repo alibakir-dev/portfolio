@@ -39,8 +39,9 @@ https://rigid-swarm-95572895.figma.site/
 ### Shared
 
 - orange accent: #F26E22
-- orange dark: #A94310 (unverified)
+- orange dark: #A94310 (unverified, not used by keycaps)
 - text on keycap: #222618
+- keycap border: 1px solid #222618 (same as text, not the `border` token)
 
 ## Fonts
 
@@ -84,7 +85,10 @@ Fluid sizes use clamp(min mobile, vw, max desktop). Format: size / line-height /
 - about text: 1.1875rem / 1.75 / 500 / normal
 - case summary: 0.8125rem / 1.65 / 400 / normal
 - tag: 0.5625rem / 1.5 / 700 / normal
-- keycap: 0.9375rem / 1.5 / 700 / -0.08em
+- keycap, hero button: 0.6875rem / 1.5 / 700 / letter-spacing TBD / uppercase
+- keycap, nav link: 0.625rem / 1.5 / 700 / uppercase
+- keycap, theme toggle and menu: 0.5625rem / 1.5 / 700 / uppercase
+- keycap, AB logo: 0.9375rem / 1.5 / 700 / -0.08em
 
 ## Spacing
 
@@ -129,6 +133,18 @@ Same in light and dark. The design does not use a clean scale; values are measur
 - building list: 1 column, gap 22px
 - everything else same as desktop
 
+## Keycap behavior
+
+Same in light and dark except shadow color (see Shadows).
+
+- neutral: background #FFFDF8, padding 9px 12px, hover background #DCE2D9
+- primary: background #F26E22, padding 12px 18px, hover brightness(1.04)
+- secondary: background #8A9A86, padding 12px 18px, hover brightness(1.04)
+- all: 1px solid border, radius 6px, text #222618, uppercase
+- pressed: translateY(2px) and shadow 0 2px 0 0
+- transition: transform 0.1s, box-shadow 0.1s, background-color 0.15s
+- font-synthesis: none (only 4 weights loaded)
+
 ## Radii
 
 Same in light and dark.
@@ -141,6 +157,7 @@ Same in light and dark.
 - skill key: 6px
 - "In progress" badge: 999px (pill)
 - theme icon: 50% (circle)
+Tokens: --radius-small (6px: keycap, skill key), --radius-medium (10px: cards, tech key).
 
 ## Shadows
 
@@ -148,7 +165,8 @@ All shadows are solid offsets with no blur and no spread. Format: offset-x offse
 
 ### Light
 
-- keycap (logo, nav, theme toggle): 0 4px 0 0 #222618
+- keycap (all variants: neutral, primary, secondary, logo, nav, theme toggle): 0 4px 0 0 #222618
+- keycap pressed: 0 2px 0 0 #222618
 - disabled keycap: 0 3px 0 0 #77786F
 - tech key (SQL, API, SSJS): 0 6px 0 0 #222618
 - section number badge: 0 3px 0 0 #222618
@@ -156,7 +174,8 @@ All shadows are solid offsets with no blur and no spread. Format: offset-x offse
 
 ### Dark
 
-- keycap (logo, nav, theme toggle): 0 4px 0 0 #F1EEE4
+- keycap (all variants): 0 4px 0 0 #F1EEE4
+- keycap pressed: 0 2px 0 0 #F1EEE4
 - disabled keycap: 0 3px 0 0 #11130E
 - tech key (SQL, API, SSJS): 0 6px 0 0 #222618
 - section number badge: 0 3px 0 0 #222618

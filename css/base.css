@@ -24,6 +24,7 @@ body {
     font-size: var(--font-size-body);
     line-height: 1.5;
     font-weight: var(--font-weight-regular);
+    font-synthesis: none;
     color: var(--color-text);
     background-color: var(--color-page-bg);
 }
