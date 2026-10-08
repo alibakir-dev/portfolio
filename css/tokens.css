@@ -1,0 +1,17 @@
+:root {
+    --color-page-bg: #F0ECE2;
+    --color-page-bg-alt: #DDD7CA;
+    --color-text: #222618;
+    --color-text-muted: #4C5143;
+    --color-surface: #FFFDF8;
+    --color-sage: #8A9A86;
+    --color-sage-surface: #DCE2D9;
+    --color-sage-shadow: #596653;
+    --color-border: #C9C8BD;
+    --color-disabled-shadow: #77786F;
+    --color-keycap-shadow: #222618;
+    --color-keycap-text: #222618;
+    --color-orange-accent: #F26E22;
+    --color-orange-accent-dark: #A94310;
+    --color-grid-line: rgba(34, 38, 24, 0.035);
+}
