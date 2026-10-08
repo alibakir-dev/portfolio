@@ -49,14 +49,6 @@ h3 {
     letter-spacing: -0.045em;
 }
 
-h4 {
-    font-size: 3.25rem;
-    line-height: 0.98;
-    font-weight: 700;
-    letter-spacing: -0.075;
-}
-
-
 .container {
     width: min(100% - 2.5rem, 60rem);
     margin-inline: auto;
