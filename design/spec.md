@@ -85,7 +85,7 @@ Fluid sizes use clamp(min mobile, vw, max desktop). Format: size / line-height /
 - about text: 1.1875rem / 1.75 / 500 / normal
 - case summary: 0.8125rem / 1.65 / 400 / normal
 - tag: 0.5625rem / 1.5 / 700 / normal
-- keycap, hero button: 0.6875rem / 1.5 / 700 / letter-spacing TBD / uppercase
+- keycap, hero button: 0.6875rem / 1.5 / 700 / normal / uppercase
 - keycap, nav link: 0.625rem / 1.5 / 700 / uppercase
 - keycap, theme toggle and menu: 0.5625rem / 1.5 / 700 / uppercase
 - keycap, AB logo: 0.9375rem / 1.5 / 700 / -0.08em
