@@ -22,6 +22,8 @@
         </nav>
     </header>
     <main id="content">
+
+        <!-- Hero -->
         <section>
             <p>SFMC → Full stack</p>
             <h1>Hi, I'm Ali Bakır.</h1>
@@ -31,12 +33,14 @@
             <a href="#work">View work <span aria-hidden="true">↓</span></a>
             <a href="assets/Ali-Bakir-CV.pdf">Download CV</a>
             <ul>
-                <li><small>SQL</small></li>
-                <li><small>API</small></li>
-                <li><small>SSJS</small></li>
-                <li><small>TS Learning</small></li>
+                <li>SQL</li>
+                <li>API</li>
+                <li>SSJS</li>
+                <li>TS <small>Learning</small></li>
             </ul>
         </section>
+
+        <!-- About -->
         <section id="about">
             <p>About</p>
             <h2>Where I come from</h2>
@@ -45,18 +49,108 @@
             <p>I'm based in Adana, Turkey, and I'm moving into full stack web development.</p>
             <p>I'm open to work in Turkey and abroad, including remote roles.</p>
         </section>
+
+        <!-- Work -->
         <section id="work">
             <p>Selected Work</p>
             <h2>Problems I have solved</h2>
+
+            <!-- Study Cards-->
+            <article>
+                <p>01 · Jameson</p>
+                <h3>Jameson Football EPL Loyalty Campaign</h3>
+                <p>A live-results reward campaign for a spirits brand and its football fans.</p>
+                <ul>
+                    <li>SFMC Automation Studio</li>
+                    <li>API</li>
+                    <li>SQL</li>
+                    <li>SSJS</li>
+                </ul>
+                <div>
+                    <h4>Problem</h4>
+                    <p>Run a loyalty campaign tied to live match results.</p>
+                </div>
+                <div>
+                    <h4>What I did</h4>
+                    <p>I designed the mechanic, pulled results from a score API on a schedule, and sent winning-team
+                        fans an email with a single-use discount code.</p>
+                </div>
+                <div>
+                    <h4>Hard part</h4>
+                    <p>Twice-weekly runs risked duplicate emails, so I added a unique weekly ID. I normalized mismatched
+                        team names, bulk-fixed old records with SQL, and enforced one code per person.</p>
+                </div>
+            </article>
+
+            <article>
+                <p>02 · Jameson</p>
+                <h3>Closest Pub Finder</h3>
+                <p>A real-time tool that connects website visitors with nearby partner venues.</p>
+                <ul>
+                    <li>Cloud Pages</li>
+                    <li>SSJS</li>
+                    <li>Haversine</li>
+                    <li>Data Extensions</li>
+                </ul>
+                <div>
+                    <h4>Problem</h4>
+                    <p>Help users find a partner venue near them from a brand website.</p>
+                </div>
+                <div>
+                    <h4>What I did</h4>
+                    <p>I built an iframe page that takes a postcode and lists the five nearest venues using the
+                        Haversine formula. It emails the selected venue, address, map link, and a discount code.</p>
+                </div>
+                <div>
+                    <h4>Hard part</h4>
+                    <p>The result had to update in real time and let users change their venue later without breaking the
+                        reward journey.</p>
+                </div>
+            </article>
+
+            <article>
+                <p>03 · Pernod Ricard UK</p>
+                <h3>Large-scale postcode enrichment</h3>
+                <p>Location data cleanup across a contact table of up to two million records.</p>
+                <ul>
+                    <li>SSJS</li>
+                    <li>SQL</li>
+                    <li>FTP</li>
+                    <li>Batch processing</li>
+                </ul>
+                <div>
+                    <h4>Problem</h4>
+                    <p>UK postcodes and city names were not standardized across a large contact table.</p>
+                </div>
+                <div>
+                    <h4>What I did</h4>
+                    <p>I imported a public five-million-row postcode file in chunks over FTP, then used SSJS and the
+                        Haversine formula to find the nearest cities and update contacts.</p>
+                </div>
+                <div>
+                    <h4>Hard part</h4>
+                    <p>I excluded edge cases where the nearest city was in a neighboring country and processed records
+                        in batches to avoid timeouts.</p>
+                </div>
+            </article>
+
+            <p><strong>Also built:</strong> an API-driven personalized image campaign across five brand sites, and a mobile game
+                    score-and-reward email integration.</p>
         </section>
+
+        <!-- Skills -->
         <section id="skills">
             <p>Skills</p>
             <h2>Tools on my keyboard</h2>
         </section>
+
+        <!-- Building -->
         <section id="building">
             <p>Currently Building</p>
             <h2>Learning by shipping</h2>
         </section>
+
+        <!-- Contact -->
         <section id="contact">
             <p>Have a role or project?</p>
             <h2>Let's talk.</h2>
@@ -67,7 +161,10 @@
                 <li><a href="#">Download CV</a></li>
             </ul>
         </section>
+
     </main>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Ali Bakır</p>
     </footer>
