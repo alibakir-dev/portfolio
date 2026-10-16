@@ -95,3 +95,27 @@
     background-color: var(--color-orange-accent);
     box-shadow: 0 3px 0 var(--color-keycap-shadow);
 }
+
+.overline, 
+.section-eyebrow {
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.overline {
+    margin-bottom: 1rem;
+    text-decoration: overline;
+}
+
+.overline::before {
+    content: "";
+    display: inline-block;
+    width: 1.875rem;
+    height: 3px;
+    background-color: var(--color-orange-accent);
+    margin-right: 0.625rem;
+}
