@@ -20,37 +20,37 @@ ul {
 }
 
 body {
-    font-family: var(--font-mono);
-    font-size: var(--font-size-body);
-    line-height: 1.5;
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xl);
+    line-height: var(--leading-normal);
     font-weight: var(--font-weight-regular);
     font-synthesis: none;
-    color: var(--color-text);
-    background-color: var(--color-page-bg);
+    color: var(--text-primary);
+    background-color: var(--bg-canvas);
 }
 
 h1 {
-    font-size: var(--font-size-h1);
-    line-height: 0.98;
+    font-size: var(--font-size-fluid-hero);
+    line-height: var(--leading-none);
     font-weight: var(--font-weight-bold);
-    letter-spacing: -0.075em;
+    letter-spacing: var(--tracking-tighter);
 }
 
 h2 {
-    font-size: var(--font-size-h2);
-    line-height: 1.12;
+    font-size: var(--font-size-fluid-xl);
+    line-height: var(--leading-tight);
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.055em;
+    letter-spacing: var(--tracking-tight);
 }
 
 h3 {
-    font-size: var(--font-size-h3);
-    line-height: 1.25;
+    font-size: var(--font-size-fluid-lg);
+    line-height: var(--leading-snug);
     font-weight: var(--font-weight-regular);
-    letter-spacing: -0.045em;
+    letter-spacing: var(--tracking-snug);
 }
 
 .container {
-    width: min(100% - 2.5rem, 60rem);
+    width: min(100% - 2.5rem, var(--layout-max-width));
     margin-inline: auto;
 }

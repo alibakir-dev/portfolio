@@ -1,47 +1,49 @@
 .keycap {
     display: inline-flex;
     align-items: center;
-    padding: 0.5625rem 0.75rem;
-    border: 1px solid var(--color-keycap-shadow);
-    border-radius: var(--radius-small);
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
     font-family: inherit;
-    font-size: 0.6875rem;
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
     letter-spacing: normal;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--color-keycap-text);
-    background-color: var(--color-surface);
-    box-shadow: var(--shadow-key);
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
+    box-shadow: var(--shadow-key-md);
     transition: var(--transition-key);
     cursor: pointer;
 }
 
 .keycap:hover {
-    background-color: var(--color-sage-surface);
+    background-color: var(--bg-surface-subtle);
 }
 
 .keycap:active {
     transform: translateY(2px);
-    box-shadow: var(--shadow-key-pressed);
+    box-shadow: var(--shadow-key-active);
 }
 
 .keycap:focus-visible {
-    outline: 2px solid var(--color-orange-accent);
+    outline: 2px solid var(--accent-primary);
     outline-offset: 4px;
 }
 
 .keycap--primary,
 .keycap--secondary {
-    padding: 0.75rem 1.125rem;
+    padding: var(--space-md) var(--space-xl);
 }
 
 .keycap--primary {
-    background-color: var(--color-orange-accent);
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
 }
 
 .keycap--secondary {
-    background-color: var(--color-sage);
+    background-color: var(--accent-secondary);
+    color: var(--text-on-accent);
 }
 
 .keycap--primary:hover,
@@ -50,11 +52,11 @@
 }
 
 .keycap--primary:hover {
-    background-color: var(--color-orange-accent);
+    background-color: var(--accent-primary);
 }
 
 .keycap--secondary:hover {
-    background-color: var(--color-sage);
+    background-color: var(--accent-secondary);
 }
 
 .keycap--logo {
@@ -62,21 +64,21 @@
     width: 2.875rem;
     height: 2.625rem;
     padding: 0;
-    font-size: 0.9375rem;
-    letter-spacing: -0.08em;
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--tracking-tighter);
 }
 
 .tag {
     display: inline-block;
-    padding: 0.375rem 0.5625rem;
-    border: 1px solid var(--color-keycap-shadow);
-    border-radius: 4px;
-    font-size: 0.5625rem;
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    line-height: 1.5;
+    line-height: var(--leading-normal);
     text-transform: uppercase;
-    color: var(--color-keycap-text);
-    background-color: var(--color-page-bg);
+    color: var(--text-primary);
+    background-color: var(--bg-canvas);
     box-shadow: none;
 }
 
@@ -87,27 +89,27 @@
     align-items: center;
     width: 2.1875rem;
     height: 1.875rem;
-    border: 1px solid var(--color-keycap-shadow);
-    border-radius: 4px;
-    font-size: 0.6875rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    color: var(--color-keycap-text);
-    background-color: var(--color-orange-accent);
-    box-shadow: 0 3px 0 var(--color-keycap-shadow);
+    color: var(--text-on-accent);
+    background-color: var(--accent-primary);
+    box-shadow: var(--shadow-key-sm);
 }
 
 .overline, 
 .section-eyebrow {
-    letter-spacing: .14em;
+    letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
-    font-size: 0.6875rem;
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    color: var(--color-text);
-    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
 }
 
 .overline {
-    margin-bottom: 1rem;
+    margin-bottom: var(--space-lg);
     text-decoration: overline;
 }
 
@@ -116,8 +118,8 @@
     display: inline-block;
     width: 1.875rem;
     height: 3px;
-    background-color: var(--color-orange-accent);
-    margin-right: 0.625rem;
+    background-color: var(--accent-primary);
+    margin-right: var(--space-sm);
 }
 
 .case-study-list {
@@ -127,49 +129,49 @@
 }
 
 .case-study {
-    border: 1px solid var(--color-text);
-    border-radius: var(--radius-medium);
-    background: var(--color-surface);
-    box-shadow: 0 6px 0 var(--color-sage-shadow);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-card);
     overflow: hidden;
 }
 
 .case-study-header {
-    border-bottom: 1px solid var(--color-text);
-    background: var(--color-sage);
+    border-bottom: 1px solid var(--border-strong);
+    background: var(--accent-secondary);
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 1rem 1.375rem;
+    padding: var(--space-lg) var(--space-xl);
     display: flex;
 }
 
 .case-details {
-    border-top:  1px solid var(--color-border);
-    margin-top: 2.125rem;
+    border-top:  1px solid var(--border-subtle);
+    margin-top:var(--space-4xl);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .case-intro {
-    margin: 2.125rem 1.375rem;
+    margin: var(--space-4xl) var(--space-xl);
 }
 
 .case-detail{
-    border-right: 1px solid var(--color-border);
-    padding: 1.5rem 1.375rem;
+    border-right: 1px solid var(--border-subtle);
+    padding: var(--space-2xl) var(--space-xl);
 }
 
 .case-number {
-    font-size: 0.6875rem;
+    font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
-    color: var(--color-keycap-text);
+    color: var(--text-on-accent);
 }
 
 .privacy-label {
-    font-size: 0.5625rem;
+    font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    color: var(--color-keycap-text);
+    color: var(--text-on-accent);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
+    letter-spacing: var(--tracking-wide);
 }
