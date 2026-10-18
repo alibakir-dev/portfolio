@@ -1,3 +1,8 @@
+/* ==========================================================================
+   1. KEYCAPS
+   ========================================================================== */
+
+/* Base Keycap */
 .keycap {
     display: inline-flex;
     align-items: center;
@@ -17,6 +22,7 @@
     cursor: pointer;
 }
 
+/* Interactive States */
 .keycap:hover {
     background-color: var(--bg-surface-subtle);
 }
@@ -31,6 +37,7 @@
     outline-offset: 4px;
 }
 
+/* Variants: Primary & Secondary */
 .keycap--primary,
 .keycap--secondary {
     padding: var(--space-md) var(--space-xl);
@@ -59,6 +66,7 @@
     background-color: var(--accent-secondary);
 }
 
+/* Variant: Brand Logo */
 .keycap--logo {
     justify-content: center;
     width: 2.875rem;
@@ -68,6 +76,11 @@
     letter-spacing: var(--tracking-tighter);
 }
 
+/* ==========================================================================
+   2. BADGES, TAGS & SECTION INDICATORS
+   ========================================================================== */
+
+/* Tag Chip */
 .tag {
     display: inline-block;
     padding: var(--space-xs) var(--space-sm);
@@ -82,6 +95,7 @@
     box-shadow: none;
 }
 
+/* Section Number Badge */
 .section-number {
     display: inline-flex;
     flex: none;
@@ -98,6 +112,7 @@
     box-shadow: var(--shadow-key-sm);
 }
 
+/* Eyebrow & Overline Labels */
 .overline, 
 .section-eyebrow {
     letter-spacing: var(--tracking-widest);
@@ -122,6 +137,11 @@
     margin-right: var(--space-sm);
 }
 
+/* ==========================================================================
+   3. CASE STUDY CARDS
+   ========================================================================== */
+
+/* Card List & Container */
 .case-study-list {
     flex-direction: column;
     gap: 28px;
@@ -136,6 +156,7 @@
     overflow: hidden;
 }
 
+/* Card Header & Header Labels */
 .case-study-header {
     border-bottom: 1px solid var(--border-strong);
     background: var(--accent-secondary);
@@ -144,22 +165,6 @@
     gap: 1rem;
     padding: var(--space-lg) var(--space-xl);
     display: flex;
-}
-
-.case-details {
-    border-top:  1px solid var(--border-subtle);
-    margin-top:var(--space-4xl);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.case-intro {
-    margin: var(--space-4xl) var(--space-xl);
-}
-
-.case-detail{
-    border-right: 1px solid var(--border-subtle);
-    padding: var(--space-2xl) var(--space-xl);
 }
 
 .case-number {
@@ -175,3 +180,44 @@
     text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
 }
+
+/* Card Body & Details Grid */
+.case-intro {
+    margin: var(--space-4xl) var(--space-xl);
+}
+
+.case-details {
+    border-top:  1px solid var(--border-subtle);
+    margin-top:var(--space-4xl);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.case-detail{
+    border-right: 1px solid var(--border-subtle);
+    padding: var(--space-2xl) var(--space-xl);
+}
+
+/* ==========================================================================
+   4. SKILLS PANELS
+   ========================================================================== */
+
+   /* Panel List & Container */
+   .skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+   }
+   
+   .skill-group {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface-subtle);
+    padding: var(--space-2xl) var(--space-xl);
+   }
+
+   .skill-group-dashed {
+    border-style: dashed;
+    border-width: 2px;
+    background-color: transparent;
+   }
