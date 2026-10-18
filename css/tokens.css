@@ -55,7 +55,9 @@
     /* 15px */
     --font-size-xl: 1rem;
     /* 16px */
-    --font-size-2xl: 1.25rem;
+    --font-size-2xl: 1.125rem;
+    /* 18px */
+    --font-size-3xl: 1.25rem;
     /* 20px */
 
     /* Typography: Fluid Display Scale (rem + vw) */
@@ -95,21 +97,23 @@
     /* 6px */
     --space-sm: 0.5rem;
     /* 8px */
-    --space-md: 0.75rem;
+    --space-md: 0.625rem;
+    /* 10px */
+    --space-lg: 0.75rem;
     /* 12px */
-    --space-lg: 1rem;
+    --space-xl: 1rem;
     /* 16px */
-    --space-xl: 1.25rem;
+    --space-2xl: 1.25rem;
     /* 20px */
-    --space-2xl: 1.5rem;
+    --space-3xl: 1.5rem;
     /* 24px */
-    --space-3xl: 1.75rem;
+    --space-4xl: 1.75rem;
     /* 28px */
-    --space-4xl: 2rem;
+    --space-5xl: 2rem;
     /* 32px */
-    --space-5xl: 3rem;
+    --space-6xl: 3rem;
     /* 48px */
-    --space-6xl: 4rem;
+    --space-7xl: 4rem;
     /* 64px */
 
     /* Spacing: Fluid Layout Scale (Auto-scales between mobile & desktop) */

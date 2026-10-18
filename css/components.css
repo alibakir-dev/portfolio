@@ -6,11 +6,12 @@
 .keycap {
     display: inline-flex;
     align-items: center;
-    padding: var(--space-sm) var(--space-md);
+    justify-content: center;
+    padding: var(--space-md) var(--space-lg);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
     font-family: inherit;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
     letter-spacing: normal;
     text-transform: uppercase;
@@ -40,17 +41,26 @@
 /* Variants: Primary & Secondary */
 .keycap--primary,
 .keycap--secondary {
-    padding: var(--space-md) var(--space-xl);
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--font-size-md);
 }
 
 .keycap--primary {
     background-color: var(--accent-primary);
     color: var(--text-on-accent);
+    gap: 18px;
 }
 
 .keycap--secondary {
     background-color: var(--accent-secondary);
     color: var(--text-on-accent);
+}
+
+.keycap--dashed {
+    border-style: dashed;
+    border-width: 2px;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .keycap--primary:hover,
@@ -74,6 +84,53 @@
     padding: 0;
     font-size: var(--font-size-lg);
     letter-spacing: var(--tracking-tighter);
+}
+
+/* Variant: Menu and Theme Toggle */
+.keycap--theme,
+.keycap--menu {
+    gap: var(--space-xs);
+}
+
+.theme-icon {
+    width: 0.6875rem;
+    height: 0.6875rem;
+    border: 2px solid;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, currentColor 50%, transparent 50%);
+    transform: rotate(0);
+}
+
+/* Variant: Tech Keys */
+.keycap--tech {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.875rem;
+    font-size: var(--font-size-base);
+    pointer-events: none;
+}
+
+.keycap--tech small {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: initial;
+}
+
+/* Keycaps Media Queries */
+
+@media (min-width: 48rem) {
+    .keycap--menu {
+        display: none;
+    }
+
+    .keycap--tech {
+        height: 5.125rem;
+        width: 5.75rem;
+        font-size: var(--font-size-2xl);
+    }
 }
 
 /* ==========================================================================
@@ -113,7 +170,7 @@
 }
 
 /* Eyebrow & Overline Labels */
-.overline, 
+.overline,
 .section-eyebrow {
     letter-spacing: var(--tracking-widest);
     text-transform: uppercase;
@@ -124,7 +181,7 @@
 }
 
 .overline {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-xl);
     text-decoration: overline;
 }
 
@@ -163,7 +220,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: var(--space-lg) var(--space-xl);
+    padding: var(--space-xl) var(--space-2xl);
     display: flex;
 }
 
@@ -183,41 +240,41 @@
 
 /* Card Body & Details Grid */
 .case-intro {
-    margin: var(--space-4xl) var(--space-xl);
+    margin: var(--space-5xl) var(--space-2xl);
 }
 
 .case-details {
-    border-top:  1px solid var(--border-subtle);
-    margin-top:var(--space-4xl);
+    border-top: 1px solid var(--border-subtle);
+    margin-top: var(--space-5xl);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
-.case-detail{
+.case-detail {
     border-right: 1px solid var(--border-subtle);
-    padding: var(--space-2xl) var(--space-xl);
+    padding: var(--space-3xl) var(--space-2xl);
 }
 
 /* ==========================================================================
    4. SKILLS PANELS
    ========================================================================== */
 
-   /* Panel List & Container */
-   .skill-groups {
+/* Panel List & Container */
+.skill-groups {
     display: flex;
     flex-direction: column;
     gap: 22px;
-   }
-   
-   .skill-group {
+}
+
+.skill-group {
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-md);
     background-color: var(--bg-surface-subtle);
-    padding: var(--space-2xl) var(--space-xl);
-   }
+    padding: var(--space-3xl) var(--space-2xl);
+}
 
-   .skill-group-dashed {
+.skill-group-dashed {
     border-style: dashed;
     border-width: 2px;
     background-color: transparent;
-   }
+}

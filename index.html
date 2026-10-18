@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/sections.css">
 
     <title>Ali Bakır | SFMC Developer</title>
     <meta name="description"
@@ -23,32 +24,48 @@
 
 <body id="top">
     <a href="#content">Skip to content</a>
-    <header class="container">
+    <header class="site-header container">
         <a class="keycap keycap--primary keycap--logo" href="#top" aria-label="Ali Bakır, home">AB</a>
-        <nav aria-label="Primary">
-            <a class="keycap" href="#about">About</a>
-            <a class="keycap" href="#work">Work</a>
-            <a class="keycap" href="#skills">Skills</a>
-            <a class="keycap" href="#building">Building</a>
-            <a class="keycap" href="#contact">Contact</a>
-        </nav>
+        <div class="header-actions">
+            <nav aria-label="Primary" id="primary-nav" class="site-nav">
+                <a class="keycap" href="#about">About</a>
+                <a class="keycap" href="#work">Work</a>
+                <a class="keycap" href="#skills">Skills</a>
+                <a class="keycap" href="#building">Building</a>
+                <a class="keycap" href="#contact">Contact</a>
+            </nav>
+
+            <button class="keycap keycap--theme" type="button" data-js-theme-toggle>
+                <span class="theme-icon" aria-hidden="true"></span>
+                Dark
+            </button>
+            <button class="keycap keycap--menu" type="button" aria-expanded="false" aria-controls="primary-nav"
+                data-js-menu-toggle>
+                <span aria-hidden="true">☰</span>
+                Menu
+            </button>
+        </div>
     </header>
+
     <main id="content" class="container">
 
         <!-- Hero -->
-        <section>
+        <section class="hero">
             <p class="overline">SFMC → Full stack</p>
-            <h1>Hi, I'm Ali Bakır.</h1>
-            <p>SFMC developer, growing into full stack.</p>
-            <p>I build data-driven marketing systems and I'm now building full stack web apps with TypeScript, React,
+            <h1>Hi, I'm<br>Ali Bakır<span class="accent-dot">.</span></h1>
+            <p class="hero-subtitle">SFMC developer, growing into full stack.</p>
+            <p class="hero-intro">I build data-driven marketing systems and I'm now building full stack web apps with
+                TypeScript, React,
                 Node, and PostgreSQL.</p>
-            <a class="keycap keycap--primary" href="#work">View work <span aria-hidden="true">↓</span></a>
-            <a class="keycap keycap--secondary" href="assets/Ali-Bakir-CV.pdf">Download CV</a>
-            <ul>
-                <li>SQL</li>
-                <li>API</li>
-                <li>SSJS</li>
-                <li>TS <small>Learning</small></li>
+            <div class="hero-actions">
+                <a class="keycap keycap--primary" href="#work">View work <span aria-hidden="true">↓</span></a>
+                <a class="keycap keycap--secondary" href="assets/Ali-Bakir-CV.pdf">Download CV</a>
+            </div>
+            <ul class="tech-keys">
+                <li class="keycap keycap--tech keycap--secondary ">SQL</li>
+                <li class="keycap keycap--tech">API</li>
+                <li class="keycap keycap--tech keycap--primary ">SSJS</li>
+                <li class="keycap keycap--tech keycap--dashed ">TS <small>Learning</small></li>
             </ul>
         </section>
 
