@@ -86,3 +86,34 @@
         margin-top: var(--space-7xl);
     }
 }
+
+/* ==========================================================================
+   3. SHARED SECTION & ABOUT
+   ========================================================================== */
+
+.section {
+    padding-block: var(--space-section);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+    font-size: var(--font-size-lg);
+    line-height: var(--leading-loose);
+    color: var(--text-secondary);
+}
+
+.about-lead {
+    font-size: 1.1875rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+@media (min-width: 48rem) {
+    .about-content{
+        max-width: 34rem;
+        margin-left: auto;
+    }
+}

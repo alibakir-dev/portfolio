@@ -194,6 +194,20 @@
     margin-right: var(--space-sm);
 }
 
+/* Section Header Layout */
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.125rem;
+    margin-bottom: var(--space-6xl);
+}
+
+@media (min-width: 48rem) {
+    .section-header {
+        margin-bottom: var(--space-7xl);
+    }
+}
+
 /* ==========================================================================
    3. CASE STUDY CARDS
    ========================================================================== */
