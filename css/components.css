@@ -6,6 +6,7 @@
 .keycap {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     padding: var(--space-md) var(--space-lg);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
@@ -41,16 +42,25 @@
 .keycap--primary,
 .keycap--secondary {
     padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--font-size-md);
 }
 
 .keycap--primary {
     background-color: var(--accent-primary);
     color: var(--text-on-accent);
+    gap: 18px;
 }
 
 .keycap--secondary {
     background-color: var(--accent-secondary);
     color: var(--text-on-accent);
+}
+
+.keycap--dashed {
+    border-style: dashed;
+    border-width: 2px;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 .keycap--primary:hover,
@@ -89,6 +99,38 @@
     border-radius: var(--radius-full);
     background: linear-gradient(90deg, currentColor 50%, transparent 50%);
     transform: rotate(0);
+}
+
+/* Variant: Tech Keys */
+.keycap--tech {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.875rem;
+    font-size: var(--font-size-base);
+    pointer-events: none;
+}
+
+.keycap--tech small {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: initial;
+}
+
+/* Keycaps Media Queries */
+
+@media (min-width: 48rem) {
+    .keycap--menu {
+        display: none;
+    }
+
+    .keycap--tech {
+        height: 5.125rem;
+        width: 5.75rem;
+        font-size: var(--font-size-2xl);
+    }
 }
 
 /* ==========================================================================
