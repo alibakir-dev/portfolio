@@ -1,0 +1,223 @@
+/* ==========================================================================
+   1. KEYCAPS
+   ========================================================================== */
+
+/* Base Keycap */
+.keycap {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: normal;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-primary);
+    background-color: var(--bg-surface);
+    box-shadow: var(--shadow-key-md);
+    transition: var(--transition-key);
+    cursor: pointer;
+}
+
+/* Interactive States */
+.keycap:hover {
+    background-color: var(--bg-surface-subtle);
+}
+
+.keycap:active {
+    transform: translateY(2px);
+    box-shadow: var(--shadow-key-active);
+}
+
+.keycap:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+/* Variants: Primary & Secondary */
+.keycap--primary,
+.keycap--secondary {
+    padding: var(--space-md) var(--space-xl);
+}
+
+.keycap--primary {
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
+}
+
+.keycap--secondary {
+    background-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
+
+.keycap--primary:hover,
+.keycap--secondary:hover {
+    filter: brightness(1.04);
+}
+
+.keycap--primary:hover {
+    background-color: var(--accent-primary);
+}
+
+.keycap--secondary:hover {
+    background-color: var(--accent-secondary);
+}
+
+/* Variant: Brand Logo */
+.keycap--logo {
+    justify-content: center;
+    width: 2.875rem;
+    height: 2.625rem;
+    padding: 0;
+    font-size: var(--font-size-lg);
+    letter-spacing: var(--tracking-tighter);
+}
+
+/* ==========================================================================
+   2. BADGES, TAGS & SECTION INDICATORS
+   ========================================================================== */
+
+/* Tag Chip */
+.tag {
+    display: inline-block;
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-normal);
+    text-transform: uppercase;
+    color: var(--text-primary);
+    background-color: var(--bg-canvas);
+    box-shadow: none;
+}
+
+/* Section Number Badge */
+.section-number {
+    display: inline-flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    width: 2.1875rem;
+    height: 1.875rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-on-accent);
+    background-color: var(--accent-primary);
+    box-shadow: var(--shadow-key-sm);
+}
+
+/* Eyebrow & Overline Labels */
+.overline, 
+.section-eyebrow {
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-sm);
+}
+
+.overline {
+    margin-bottom: var(--space-lg);
+    text-decoration: overline;
+}
+
+.overline::before {
+    content: "";
+    display: inline-block;
+    width: 1.875rem;
+    height: 3px;
+    background-color: var(--accent-primary);
+    margin-right: var(--space-sm);
+}
+
+/* ==========================================================================
+   3. CASE STUDY CARDS
+   ========================================================================== */
+
+/* Card List & Container */
+.case-study-list {
+    flex-direction: column;
+    gap: 28px;
+    display: flex;
+}
+
+.case-study {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+}
+
+/* Card Header & Header Labels */
+.case-study-header {
+    border-bottom: 1px solid var(--border-strong);
+    background: var(--accent-secondary);
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: var(--space-lg) var(--space-xl);
+    display: flex;
+}
+
+.case-number {
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-on-accent);
+}
+
+.privacy-label {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-on-accent);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+/* Card Body & Details Grid */
+.case-intro {
+    margin: var(--space-4xl) var(--space-xl);
+}
+
+.case-details {
+    border-top:  1px solid var(--border-subtle);
+    margin-top:var(--space-4xl);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.case-detail{
+    border-right: 1px solid var(--border-subtle);
+    padding: var(--space-2xl) var(--space-xl);
+}
+
+/* ==========================================================================
+   4. SKILLS PANELS
+   ========================================================================== */
+
+   /* Panel List & Container */
+   .skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+   }
+   
+   .skill-group {
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-surface-subtle);
+    padding: var(--space-2xl) var(--space-xl);
+   }
+
+   .skill-group-dashed {
+    border-style: dashed;
+    border-width: 2px;
+    background-color: transparent;
+   }

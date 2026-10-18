@@ -14,6 +14,7 @@
     <!-- Stylesheet Implementation -->
     <link rel="stylesheet" href="css/tokens.css">
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
 
     <title>Ali Bakır | SFMC Developer</title>
     <meta name="description"
@@ -23,26 +24,26 @@
 <body id="top">
     <a href="#content">Skip to content</a>
     <header class="container">
-        <a href="#top" aria-label="Ali Bakır, home">AB</a>
+        <a class="keycap keycap--primary keycap--logo" href="#top" aria-label="Ali Bakır, home">AB</a>
         <nav aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#skills">Skills</a>
-            <a href="#building">Building</a>
-            <a href="#contact">Contact</a>
+            <a class="keycap" href="#about">About</a>
+            <a class="keycap" href="#work">Work</a>
+            <a class="keycap" href="#skills">Skills</a>
+            <a class="keycap" href="#building">Building</a>
+            <a class="keycap" href="#contact">Contact</a>
         </nav>
     </header>
     <main id="content" class="container">
 
         <!-- Hero -->
         <section>
-            <p>SFMC → Full stack</p>
+            <p class="overline">SFMC → Full stack</p>
             <h1>Hi, I'm Ali Bakır.</h1>
             <p>SFMC developer, growing into full stack.</p>
             <p>I build data-driven marketing systems and I'm now building full stack web apps with TypeScript, React,
                 Node, and PostgreSQL.</p>
-            <a href="#work">View work <span aria-hidden="true">↓</span></a>
-            <a href="assets/Ali-Bakir-CV.pdf">Download CV</a>
+            <a class="keycap keycap--primary" href="#work">View work <span aria-hidden="true">↓</span></a>
+            <a class="keycap keycap--secondary" href="assets/Ali-Bakir-CV.pdf">Download CV</a>
             <ul>
                 <li>SQL</li>
                 <li>API</li>
@@ -53,7 +54,8 @@
 
         <!-- About -->
         <section id="about">
-            <p>About</p>
+            <span class="section-number">01</span>
+            <p class="section-eyebrow">About</p>
             <h2>Where I come from</h2>
             <p>I'm a marketing automation developer with strong SQL and API skills, and I spent two years as a team lead
                 at a marketing technology agency.</p>
@@ -63,87 +65,118 @@
 
         <!-- Work -->
         <section id="work">
-            <p>Selected Work</p>
+            <span class="section-number">02</span>
+            <p class="section-eyebrow">Selected Work</p>
             <h2>Problems I have solved</h2>
 
             <!-- Study Cards-->
-            <article>
-                <p>01 · Jameson</p>
-                <h3>Jameson Football EPL Loyalty Campaign</h3>
-                <p>A live-results reward campaign for a spirits brand and its football fans.</p>
-                <ul>
-                    <li>SFMC Automation Studio</li>
-                    <li>API</li>
-                    <li>SQL</li>
-                    <li>SSJS</li>
-                </ul>
-                <div>
-                    <h4>Problem</h4>
-                    <p>Run a loyalty campaign tied to live match results.</p>
-                </div>
-                <div>
-                    <h4>What I did</h4>
-                    <p>I designed the mechanic, pulled results from a score API on a schedule, and sent winning-team
-                        fans an email with a single-use discount code.</p>
-                </div>
-                <div>
-                    <h4>Hard part</h4>
-                    <p>Twice-weekly runs risked duplicate emails, so I added a unique weekly ID. I normalized mismatched
-                        team names, bulk-fixed old records with SQL, and enforced one code per person.</p>
-                </div>
-            </article>
+            <div class="case-study-list">
 
-            <article>
-                <p>02 · Jameson</p>
-                <h3>Closest Pub Finder</h3>
-                <p>A real-time tool that connects website visitors with nearby partner venues.</p>
-                <ul>
-                    <li>Cloud Pages</li>
-                    <li>SSJS</li>
-                    <li>Haversine</li>
-                    <li>Data Extensions</li>
-                </ul>
-                <div>
-                    <h4>Problem</h4>
-                    <p>Help users find a partner venue near them from a brand website.</p>
-                </div>
-                <div>
-                    <h4>What I did</h4>
-                    <p>I built an iframe page that takes a postcode and lists the five nearest venues using the
-                        Haversine formula. It emails the selected venue, address, map link, and a discount code.</p>
-                </div>
-                <div>
-                    <h4>Hard part</h4>
-                    <p>The result had to update in real time and let users change their venue later without breaking the
-                        reward journey.</p>
-                </div>
-            </article>
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <span class="case-number">01</span>
+                        <p class="privacy-label">Jameson</p>
+                    </div>
+                    <div class="case-intro">
+                        <h3>Jameson Football EPL Loyalty Campaign</h3>
+                        <p>A live-results reward campaign for a spirits brand and its football fans.</p>
+                        <ul>
+                            <li class="tag">SFMC Automation Studio</li>
+                            <li class="tag">API</li>
+                            <li class="tag">SQL</li>
+                            <li class="tag">SSJS</li>
+                        </ul>
+                    </div>
+                    <div class="case-details">
+                        <div class="case-detail">
+                            <h4>Problem</h4>
+                            <p>Run a loyalty campaign tied to live match results.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>What I did</h4>
+                            <p>I designed the mechanic, pulled results from a score API on a schedule, and sent
+                                winning-team
+                                fans an email with a single-use discount code.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>Hard part</h4>
+                            <p>Twice-weekly runs risked duplicate emails, so I added a unique weekly ID. I normalized
+                                mismatched
+                                team names, bulk-fixed old records with SQL, and enforced one code per person.</p>
+                        </div>
+                    </div>
+                </article>
 
-            <article>
-                <p>03 · Pernod Ricard UK</p>
-                <h3>Large-scale postcode enrichment</h3>
-                <p>Location data cleanup across a contact table of up to two million records.</p>
-                <ul>
-                    <li>SSJS</li>
-                    <li>SQL</li>
-                    <li>FTP</li>
-                    <li>Batch processing</li>
-                </ul>
-                <div>
-                    <h4>Problem</h4>
-                    <p>UK postcodes and city names were not standardized across a large contact table.</p>
-                </div>
-                <div>
-                    <h4>What I did</h4>
-                    <p>I imported a public five-million-row postcode file in chunks over FTP, then used SSJS and the
-                        Haversine formula to find the nearest cities and update contacts.</p>
-                </div>
-                <div>
-                    <h4>Hard part</h4>
-                    <p>I excluded edge cases where the nearest city was in a neighboring country and processed records
-                        in batches to avoid timeouts.</p>
-                </div>
-            </article>
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <span class="case-number">02</span>
+                        <p class="privacy-label">Jameson</p>
+                    </div>
+                    <div class="case-intro">
+                        <h3>Jameson Football EPL Loyalty Campaign</h3>
+                        <p>A live-results reward campaign for a spirits brand and its football fans.</p>
+                        <ul>
+                            <li class="tag">SFMC Automation Studio</li>
+                            <li class="tag">API</li>
+                            <li class="tag">SQL</li>
+                            <li class="tag">SSJS</li>
+                        </ul>
+                    </div>
+                    <div class="case-details">
+                        <div class="case-detail">
+                            <h4>Problem</h4>
+                            <p>Run a loyalty campaign tied to live match results.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>What I did</h4>
+                            <p>I designed the mechanic, pulled results from a score API on a schedule, and sent
+                                winning-team
+                                fans an email with a single-use discount code.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>Hard part</h4>
+                            <p>Twice-weekly runs risked duplicate emails, so I added a unique weekly ID. I normalized
+                                mismatched
+                                team names, bulk-fixed old records with SQL, and enforced one code per person.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="case-study">
+                    <div class="case-study-header">
+                        <span class="case-number">03</span>
+                        <p class="privacy-label">Jameson</p>
+                    </div>
+                    <div class="case-intro">
+                        <h3>Jameson Football EPL Loyalty Campaign</h3>
+                        <p>A live-results reward campaign for a spirits brand and its football fans.</p>
+                        <ul>
+                            <li class="tag">SFMC Automation Studio</li>
+                            <li class="tag">API</li>
+                            <li class="tag">SQL</li>
+                            <li class="tag">SSJS</li>
+                        </ul>
+                    </div>
+                    <div class="case-details">
+                        <div class="case-detail">
+                            <h4>Problem</h4>
+                            <p>Run a loyalty campaign tied to live match results.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>What I did</h4>
+                            <p>I designed the mechanic, pulled results from a score API on a schedule, and sent
+                                winning-team
+                                fans an email with a single-use discount code.</p>
+                        </div>
+                        <div class="case-detail">
+                            <h4>Hard part</h4>
+                            <p>Twice-weekly runs risked duplicate emails, so I added a unique weekly ID. I normalized
+                                mismatched
+                                team names, bulk-fixed old records with SQL, and enforced one code per person.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
 
             <p><strong>Also built:</strong> an API-driven personalized image campaign across five brand sites, and a
                 mobile game
@@ -152,38 +185,41 @@
 
         <!-- Skills -->
         <section id="skills">
-            <p>Skills</p>
+            <span class="section-number">03</span>
+            <p class="section-eyebrow">Skills</p>
             <h2>Tools on my keyboard</h2>
-            <article>
-                <h3>Daily</h3>
-                <p>Tools I use in production.</p>
-                <ul>
-                    <li>SFMC</li>
-                    <li>SQL</li>
-                    <li>SSJS</li>
-                    <li>AMPScript</li>
-                    <li>REST / SOAP APIs</li>
-                    <li>HTML / CSS</li>
-                </ul>
-            </article>
-
-            <article>
-                <h3>Learning now</h3>
-                <p>My full stack toolkit in progress.</p>
-                <ul>
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>PostgreSQL</li>
-                    <li>Git</li>
-                </ul>
-            </article>
+            <div class="skill-groups">
+                <article class="skill-group">
+                    <h3>Daily</h3>
+                    <p>Tools I use in production.</p>
+                    <ul>
+                        <li class="keycap">SFMC</li>
+                        <li class="keycap">SQL</li>
+                        <li class="keycap">SSJS</li>
+                        <li class="keycap">AMPScript</li>
+                        <li class="keycap">REST / SOAP APIs</li>
+                        <li class="keycap">HTML / CSS</li>
+                    </ul>
+                </article>
+                <article class="skill-group skill-group-dashed">
+                    <h3>Learning now</h3>
+                    <p>My full stack toolkit in progress.</p>
+                    <ul>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>React</li>
+                        <li>Node.js</li>
+                        <li>PostgreSQL</li>
+                        <li>Git</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
         <!-- Building -->
         <section id="building">
-            <p>Currently Building</p>
+            <span class="section-number">04</span>
+            <p class="section-eyebrow">Currently Building</p>
             <h2>Learning by shipping</h2>
             <article>
                 <p>Planned</p>
@@ -212,7 +248,7 @@
 
         <!-- Contact -->
         <section id="contact">
-            <p>Have a role or project?</p>
+            <p class="overline">Have a role or project?</p>
             <h2>Let's talk.</h2>
             <a href="mailto:alibakirwork@gmail.com">alibakirwork@gmail.com</a>
             <ul>
