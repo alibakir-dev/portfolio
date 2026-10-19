@@ -194,6 +194,20 @@
     margin-right: var(--space-sm);
 }
 
+/* Section Header Layout */
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.125rem;
+    margin-bottom: var(--space-6xl);
+}
+
+@media (min-width: 48rem) {
+    .section-header {
+        margin-bottom: var(--space-7xl);
+    }
+}
+
 /* ==========================================================================
    3. CASE STUDY CARDS
    ========================================================================== */
@@ -243,16 +257,60 @@
     margin: var(--space-5xl) var(--space-2xl);
 }
 
+.case-intro p {
+    margin-top: var(--space-sm);
+    font-size: 0.8125rem;
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    max-width: var(--layout-prose-width);
+}
+
+.case-intro ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+}
+
 .case-details {
-    border-top: 1px solid var(--border-subtle);
-    margin-top: var(--space-5xl);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    margin-top: var(--space-5xl);
+    border-top: 1px solid var(--border-subtle);
 }
 
 .case-detail {
-    border-right: 1px solid var(--border-subtle);
     padding: var(--space-3xl) var(--space-2xl);
+}
+
+.case-detail + .case-detail {
+    border-top: 1px solid var(--border-subtle);
+}
+
+.case-detail h4 {
+    margin-bottom: var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.case-detail p {
+    font-size: var(--font-size-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+}
+
+@media (min-width: 48rem) {
+    .case-details {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .case-detail+.case-detail {
+        border-top: none;
+        border-left: 1px solid var(--border-subtle);
+    }
 }
 
 /* ==========================================================================
