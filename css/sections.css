@@ -117,3 +117,21 @@
         margin-left: auto;
     }
 }
+
+/* ==========================================================================
+   4. SELECTED WORK
+   ========================================================================== */
+
+   .also-built {
+    max-width: var(--layout-prose-width);
+    margin-top: 2.875rem;
+    padding-left: var(--space-2xl);
+    border-left: 4px solid var(--accent-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+   }
+
+   .also-built strong {
+    color: var(--text-primary);
+   }
