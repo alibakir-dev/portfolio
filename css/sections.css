@@ -112,7 +112,7 @@
 }
 
 @media (min-width: 48rem) {
-    .about-content{
+    .about-content {
         max-width: 34rem;
         margin-left: auto;
     }
@@ -122,7 +122,7 @@
    4. SELECTED WORK
    ========================================================================== */
 
-   .also-built {
+.also-built {
     max-width: var(--layout-prose-width);
     margin-top: 2.875rem;
     padding-left: var(--space-2xl);
@@ -130,8 +130,80 @@
     font-size: var(--font-size-base);
     line-height: var(--leading-relaxed);
     color: var(--text-secondary);
-   }
+}
 
-   .also-built strong {
+.also-built strong {
     color: var(--text-primary);
-   }
+}
+
+/* ==========================================================================
+   5. CONTACT
+   ========================================================================== */
+
+.contact {
+    padding-block: clamp(6rem, 9vw, 7rem);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.contact-title {
+    font-size: var(--font-size-fluid-2xl);
+    line-height: var(--leading-none);
+    letter-spacing: var(--tracking-tighter);
+}
+
+.contact-email {
+    display: inline-block;
+    margin-top: var(--space-3xl);
+    font-size: var(--font-size-fluid-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
+}
+
+.contact-email:hover {
+    color: var(--accent-primary);
+}
+
+.contact-email:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+.contact-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    margin-top: var(--space-4xl);
+}
+
+/* ==========================================================================
+   6. FOOTER
+   ========================================================================== */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4xl);
+    padding-bottom: 2.125rem;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.back-to-top {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.back-to-top:hover {
+    color: var(--accent-primary);
+}
+
+.back-to-top:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+}

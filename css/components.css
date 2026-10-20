@@ -45,6 +45,11 @@
     font-size: var(--font-size-md);
 }
 
+.keycap--footer {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--font-size-md);
+}
+
 .keycap--primary {
     background-color: var(--accent-primary);
     color: var(--text-on-accent);
