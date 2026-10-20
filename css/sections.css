@@ -103,6 +103,7 @@
     font-size: var(--font-size-lg);
     line-height: var(--leading-loose);
     color: var(--text-secondary);
+    max-width: 56ch;
 }
 
 .about-lead {
@@ -113,8 +114,14 @@
 
 @media (min-width: 48rem) {
     .about-content {
-        max-width: 34rem;
+        max-width: 40rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .about-content {
         margin-left: auto;
+        margin-right: 0;
     }
 }
 
@@ -134,6 +141,12 @@
 
 .also-built strong {
     color: var(--text-primary);
+}
+
+.building-note {
+    margin-top: var(--space-5xl);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
 }
 
 /* ==========================================================================
@@ -159,6 +172,8 @@
     color: var(--text-primary);
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
+    overflow-wrap: anywhere;
+    min-height: 2.75rem;
 }
 
 .contact-email:hover {
@@ -191,6 +206,8 @@
     font-weight: var(--font-weight-semibold);
     text-transform: uppercase;
     color: var(--text-secondary);
+    min-height: 2.75rem;
+    overflow-wrap: anywhere;
 }
 
 .back-to-top {
