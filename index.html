@@ -222,8 +222,10 @@
             </div>
             <div class="skill-groups">
                 <article class="skill-group">
-                    <h3>Daily</h3>
-                    <p>Tools I use in production.</p>
+                    <div>
+                        <h3>Daily</h3>
+                        <p>Tools I use in production.</p>
+                    </div>
                     <ul>
                         <li class="keycap">SFMC</li>
                         <li class="keycap">SQL</li>
@@ -233,16 +235,19 @@
                         <li class="keycap">HTML / CSS</li>
                     </ul>
                 </article>
+
                 <article class="skill-group skill-group-dashed">
-                    <h3>Learning now</h3>
-                    <p>My full stack toolkit in progress.</p>
+                    <div>
+                        <h3>Learning now</h3>
+                        <p>My full stack toolkit in progress.</p>
+                    </div>
                     <ul>
-                        <li>JavaScript</li>
-                        <li>TypeScript</li>
-                        <li>React</li>
-                        <li>Node.js</li>
-                        <li>PostgreSQL</li>
-                        <li>Git</li>
+                        <li class="keycap keycap--dashed keycap--learning">JavaScript</li>
+                        <li class="keycap keycap--dashed keycap--learning">TypeScript</li>
+                        <li class="keycap keycap--dashed keycap--learning">React</li>
+                        <li class="keycap keycap--dashed keycap--learning">Node.js</li>
+                        <li class="keycap keycap--dashed keycap--learning">PostgreSQL</li>
+                        <li class="keycap keycap--dashed keycap--learning">Git</li>
                     </ul>
                 </article>
             </div>
@@ -257,29 +262,38 @@
                     <h2>Learning by shipping</h2>
                 </div>
             </div>
-            <article>
-                <p>Planned</p>
-                <a href="#" aria-disabled="true">GitHub</a>
-                <h3>Watchlist</h3>
-                <p>A movie and TV tracker that sends a notification when a new episode or season is released.</p>
-                <ul>
-                    <li>React</li>
-                    <li>TypeScript</li>
-                    <li>Node.js</li>
-                </ul>
-            </article>
 
-            <article>
-                <p>Planned</p>
-                <a href="#" aria-disabled="true">GitHub</a>
-                <h3>Gym Tracker</h3>
-                <p>A full stack workout tracker for logging sessions and following progress.</p>
-                <ul>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>PostgreSQL</li>
-                </ul>
-            </article>
+            <div class="building-list">
+                <article class="building-card">
+                    <div class="building-card-header">
+                        <p class="status-badge">Planned</p>
+                        <a class="keycap keycap--disabled" href="#" aria-disabled="true">GitHub</a>
+                    </div>
+                    <h3>Watchlist</h3>
+                    <p>A movie and TV tracker that sends a notification when a new episode or season is released.
+                    </p>
+                    <ul>
+                        <li class="tag">React</li>
+                        <li class="tag">TypeScript</li>
+                        <li class="tag">Node.js</li>
+                    </ul>
+                </article>
+
+                <article class="building-card">
+                    <div class="building-card-header">
+                        <p class="status-badge">Planned</p>
+                        <a class="keycap keycap--disabled" href="#" aria-disabled="true">GitHub</a>
+                    </div>
+                    <h3>Gym Tracker</h3>
+                    <p>A full stack workout tracker for logging sessions and following progress.
+                    </p>
+                    <ul>
+                        <li class="tag">React</li>
+                        <li class="tag">Node.js</li>
+                        <li class="tag">PostgreSQL</li>
+                    </ul>
+                </article>
+            </div>
         </section>
 
         <!-- Contact -->
