@@ -20,6 +20,16 @@
     <title>Ali Bakır | SFMC Developer</title>
     <meta name="description"
         content="Portfolio of Ali Bakır, an SFMC developer growing into full stack web development">
+
+    <script>
+        (function () {
+            const saved = localStorage.getItem("theme");
+            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            const theme = saved || (prefersDark ? "dark" : "light");
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
+    <script src="js/main.js" defer></script>
 </head>
 
 <body id="top">
@@ -37,11 +47,11 @@
 
             <button class="keycap keycap--theme" type="button" data-js-theme-toggle>
                 <span class="theme-icon" aria-hidden="true"></span>
-                Dark
+                <span data-js-theme-label>Dark</span>
             </button>
             <button class="keycap keycap--menu" type="button" aria-expanded="false" aria-controls="primary-nav"
                 data-js-menu-toggle>
-                <span aria-hidden="true">☰</span>
+                <span aria-hidden="true" data-js-menu-icon>☰</span>
                 Menu
             </button>
         </div>

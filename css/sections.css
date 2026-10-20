@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .site-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,16 +22,49 @@
     display: none;
 }
 
+.site-nav.is-open {
+    position: absolute;
+    top: calc(100% + var(--space-lg));
+    left: 0;
+    right: 0;
+    z-index: var(--z-dropdown);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-xl);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-canvas);
+    box-shadow: var(--shadow-key-lg);
+}
+
+.site-nav.is-open .keycap {
+    width: 100%;
+    justify-content: flex-start;
+}
+
 @media (min-width: 48rem) {
     .site-header {
         padding-top: var(--space-4xl);
         padding-bottom: var(--space-5xl);
     }
 
-    .site-nav {
+    .site-nav,
+    .site-nav.is-open {
+        position: static;
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: var(--space-md);
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .site-nav.is-open .keycap {
+        width: auto;
+        justify-content: center;
     }
 }
 
