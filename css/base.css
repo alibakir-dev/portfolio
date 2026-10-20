@@ -91,7 +91,6 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     :root {
         --transition-fast: 0ms;
         --transition-normal: 0ms;
