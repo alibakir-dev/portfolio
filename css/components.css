@@ -21,6 +21,7 @@
     box-shadow: var(--shadow-key-md);
     transition: var(--transition-key);
     cursor: pointer;
+    min-height: 2.75rem;
 }
 
 /* Interactive States */
@@ -38,16 +39,14 @@
     outline-offset: 4px;
 }
 
-/* Variants: Primary & Secondary */
+/* Variants: Primary & Secondary & Footer & Dashed */
 .keycap--primary,
-.keycap--secondary {
-    padding: var(--space-lg) var(--space-2xl);
-    font-size: var(--font-size-md);
-}
-
+.keycap--secondary,
 .keycap--footer {
+    min-height: 2.75rem;
     padding: var(--space-lg) var(--space-2xl);
     font-size: var(--font-size-md);
+    gap: var(--space-sm);
 }
 
 .keycap--primary {
@@ -78,6 +77,10 @@
     pointer-events: none;
     background-color: var(--bg-canvas);
     box-shadow: var(--shadow-disabled);
+    min-height: auto;
+    padding: var(--space-sm);
+    gap: var(--space-xs);
+    opacity: .65
 }
 
 .keycap--primary:hover,
@@ -106,6 +109,7 @@
 /* Variant: Menu and Theme Toggle */
 .keycap--theme,
 .keycap--menu {
+    min-height: 2.75rem;
     gap: var(--space-xs);
 }
 
@@ -128,6 +132,7 @@
     height: 3.875rem;
     font-size: var(--font-size-base);
     pointer-events: none;
+    padding: 0;
 }
 
 .keycap--tech small {
@@ -163,7 +168,6 @@
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
     line-height: var(--leading-normal);
-    text-transform: uppercase;
     color: var(--text-primary);
     background-color: var(--bg-canvas);
     box-shadow: none;
@@ -324,6 +328,10 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
+    .case-detail {
+        padding: var(--space-5xl) var(--space-3xl);
+    }
+
     .case-detail+.case-detail {
         border-top: none;
         border-left: 1px solid var(--border-subtle);
@@ -370,6 +378,12 @@
 
 .skill-group h3 {
     font-size: var(--font-size-3xl);
+}
+
+.skill-group .keycap {
+    min-height: auto;
+    padding: var(--space-md) var(--space-xl);
+    text-transform: none;
 }
 
 @media (min-width: 48rem) {
@@ -434,7 +448,7 @@
     background-color: var(--accent-primary);
 }
 
-.building-card > p {
+.building-card>p {
     margin-top: var(--space-sm);
     font-size: var(--font-size-base);
     line-height: var(--leading-relaxed);
