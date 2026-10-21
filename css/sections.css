@@ -1,12 +1,13 @@
 /* ==========================================================================
-   1. HEADER
+   SECTIONS.CSS
    ========================================================================== */
 
+/* --- 1. Header & Navigation --- */
 .site-header {
     position: relative;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-4xl);
     border-bottom: 1px solid var(--border-subtle);
@@ -18,11 +19,12 @@
     gap: var(--space-md);
 }
 
+/* Mobile dropdown navigation state */
 .site-nav {
     position: absolute;
     top: calc(100% + var(--space-lg));
-    left: 0;
     right: 0;
+    left: 0;
     z-index: var(--z-dropdown);
     display: flex;
     flex-direction: column;
@@ -60,21 +62,22 @@
         padding-bottom: var(--space-5xl);
     }
 
+    /* Desktop inline navigation override */
     .site-nav,
     .site-nav.is-open {
-        position: static; 
+        position: static;
         flex-direction: row;
         align-items: center;
         gap: var(--space-md);
-        padding: 0; 
-        border: none; 
+        padding: 0;
+        border: none;
         background-color: transparent;
         box-shadow: none;
-        opacity: 1; 
-        visibility: visible; 
+        opacity: 1;
+        visibility: visible;
         pointer-events: auto;
-        transform: none; 
-        transition: none; 
+        transform: none;
+        transition: none;
     }
 
     .site-nav .keycap {
@@ -83,10 +86,8 @@
     }
 }
 
-/* ==========================================================================
-   2. HERO
-   ========================================================================== */
 
+/* --- 2. Hero --- */
 .hero {
     padding-top: var(--space-hero-top);
     padding-bottom: var(--space-hero-bottom);
@@ -123,8 +124,8 @@
 .tech-keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    margin-top: var(--space-7xl);
     gap: var(--space-sm);
+    margin-top: var(--space-7xl);
 }
 
 @media (min-width: 48rem) {
@@ -136,10 +137,8 @@
     }
 }
 
-/* ==========================================================================
-   3. SHARED SECTION & ABOUT
-   ========================================================================== */
 
+/* --- 3. Shared Section & About --- */
 .section {
     padding-block: var(--space-section);
     border-bottom: 1px solid var(--border-subtle);
@@ -149,10 +148,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-3xl);
+    max-width: 56ch;
     font-size: var(--font-size-lg);
     line-height: var(--leading-loose);
     color: var(--text-secondary);
-    max-width: 56ch;
 }
 
 .about-lead {
@@ -169,15 +168,13 @@
 
 @media (min-width: 64rem) {
     .about-content {
-        margin-left: auto;
         margin-right: 0;
+        margin-left: auto;
     }
 }
 
-/* ==========================================================================
-   4. SELECTED WORK
-   ========================================================================== */
 
+/* --- 4. Selected Work --- */
 .also-built {
     max-width: var(--layout-prose-width);
     margin-top: 2.875rem;
@@ -198,10 +195,8 @@
     color: var(--text-secondary);
 }
 
-/* ==========================================================================
-   5. CONTACT
-   ========================================================================== */
 
+/* --- 5. Contact --- */
 .contact {
     padding-block: clamp(6rem, 9vw, 7rem);
     border-bottom: 1px solid var(--border-subtle);
@@ -215,6 +210,7 @@
 
 .contact-email {
     display: inline-block;
+    min-height: 2.75rem;
     margin-top: var(--space-3xl);
     font-size: var(--font-size-fluid-sm);
     font-weight: var(--font-weight-semibold);
@@ -222,7 +218,6 @@
     text-decoration-thickness: 2px;
     text-underline-offset: 6px;
     overflow-wrap: anywhere;
-    min-height: 2.75rem;
 }
 
 .contact-email:hover {
@@ -241,21 +236,20 @@
     margin-top: var(--space-4xl);
 }
 
-/* ==========================================================================
-   6. FOOTER
-   ========================================================================== */
 
+/* --- 6. Footer --- */
 .site-footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    min-height: 2.75rem;
     padding-top: var(--space-4xl);
     padding-bottom: 2.125rem;
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-semibold);
+    letter-spacing: normal;
     text-transform: uppercase;
     color: var(--text-secondary);
-    min-height: 2.75rem;
     overflow-wrap: anywhere;
 }
 

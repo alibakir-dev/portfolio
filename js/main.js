@@ -1,6 +1,10 @@
-// ==========================================================================
-// 1. THEME TOGGLE (LIGHT / DARK)
-// ==========================================================================
+/**
+ * ============================================================================
+ * MAIN.JS
+ * ============================================================================
+ */
+
+/* --- 1. Theme Toggle (Light / Dark) --- */
 
 const root = document.documentElement;
 const themeToggle = document.querySelector("[data-js-theme-toggle]");
@@ -23,9 +27,8 @@ themeToggle.addEventListener("click", () => {
     updateThemeLabel(nexTheme);
 });
 
-// ==========================================================================
-// 2. MOBILE MENU TOGGLE
-// ==========================================================================
+
+/* --- 2. Mobile Menu Toggle --- */
 
 const menuToggle = document.querySelector("[data-js-menu-toggle]");
 const menuIcon = document.querySelector("[data-js-menu-icon]");
@@ -58,7 +61,7 @@ primaryNav.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
     const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
 
-    if(event.key === "Escape" && isExpanded) {
+    if (event.key === "Escape" && isExpanded) {
         setMenuState(false, true);
     }
-})
+});
