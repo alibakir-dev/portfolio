@@ -1,3 +1,8 @@
+/* ==========================================================================
+   BASE.CSS
+   ========================================================================== */
+
+/* --- 1. Resets --- */
 *,
 *::before,
 *::after {
@@ -19,12 +24,14 @@ ul {
     list-style: none;
 }
 
+/* --- 2. Document Setup --- */
 body {
     font-family: var(--font-family-mono);
     font-size: var(--font-size-xl);
-    line-height: var(--leading-normal);
     font-weight: var(--font-weight-regular);
+    line-height: var(--leading-normal);
     font-synthesis: none;
+
     color: var(--text-primary);
     background-color: var(--bg-canvas);
     background-image: repeating-linear-gradient(to bottom,
@@ -34,45 +41,52 @@ body {
             var(--bg-grid) 24px);
 }
 
+/* --- 3. Typography --- */
 h1 {
     font-size: var(--font-size-fluid-hero);
-    line-height: var(--leading-none);
     font-weight: var(--font-weight-bold);
+    line-height: var(--leading-none);
     letter-spacing: var(--tracking-tighter);
 }
 
 h2 {
     font-size: var(--font-size-fluid-xl);
-    line-height: var(--leading-tight);
     font-weight: var(--font-weight-regular);
+    line-height: var(--leading-tight);
     letter-spacing: var(--tracking-tight);
 }
 
 h3 {
     font-size: var(--font-size-fluid-lg);
-    line-height: var(--leading-snug);
     font-weight: var(--font-weight-regular);
+    line-height: var(--leading-snug);
     letter-spacing: var(--tracking-snug);
 }
 
+/* --- 4. Layout --- */
 .container {
     width: min(100% - 2.5rem, var(--layout-max-width));
     margin-inline: auto;
 }
 
+/* --- 5. Accessibility (A11y) --- */
 .skip-link {
     position: absolute;
     top: var(--space-lg);
     left: var(--space-lg);
     z-index: var(--z-modal);
+
     padding: var(--space-sm) var(--space-lg);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
+
     background-color: var(--accent-primary);
     color: var(--text-on-accent);
+
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-bold);
     text-decoration: none;
+
     transform: translateY(-200%);
     transition: transform var(--transition-fast);
 }
@@ -83,11 +97,11 @@ h3 {
     outline-offset: 2px;
 }
 
+/* --- 6. User Preferences --- */
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
     }
-
 }
 
 @media (prefers-reduced-motion: reduce) {

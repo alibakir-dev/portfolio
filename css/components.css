@@ -1,12 +1,14 @@
 /* ==========================================================================
-   1. KEYCAPS
+   COMPONENTS.CSS
    ========================================================================== */
 
-/* Base Keycap */
+/* --- 1. Keycaps --- */
+
 .keycap {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-height: 2.75rem;
     padding: var(--space-md) var(--space-lg);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-sm);
@@ -21,10 +23,8 @@
     box-shadow: var(--shadow-key-md);
     transition: var(--transition-key);
     cursor: pointer;
-    min-height: 2.75rem;
 }
 
-/* Interactive States */
 .keycap:hover {
     background-color: var(--bg-surface-subtle);
 }
@@ -39,48 +39,48 @@
     outline-offset: 4px;
 }
 
-/* Variants: Primary & Secondary & Footer & Dashed */
+/* Keycap Variants */
 .keycap--primary,
 .keycap--secondary,
 .keycap--footer {
     min-height: 2.75rem;
     padding: var(--space-lg) var(--space-2xl);
-    font-size: var(--font-size-md);
     gap: var(--space-sm);
+    font-size: var(--font-size-md);
 }
 
 .keycap--primary {
-    background-color: var(--accent-primary);
-    color: var(--text-on-accent);
     gap: 18px;
+    color: var(--text-on-accent);
+    background-color: var(--accent-primary);
 }
 
 .keycap--secondary {
-    background-color: var(--accent-secondary);
     color: var(--text-on-accent);
+    background-color: var(--accent-secondary);
 }
 
 .keycap--dashed {
     border-style: dashed;
     border-width: 2px;
-    box-shadow: none;
     background-color: transparent;
+    box-shadow: none;
 }
 
 .keycap--learning {
-    background-color: var(--bg-surface);
     border-width: 1px;
+    background-color: var(--bg-surface);
     text-transform: initial;
 }
 
 .keycap--disabled {
-    pointer-events: none;
-    background-color: var(--bg-canvas);
-    box-shadow: var(--shadow-disabled);
     min-height: auto;
     padding: var(--space-sm);
     gap: var(--space-xs);
-    opacity: .65
+    background-color: var(--bg-canvas);
+    box-shadow: var(--shadow-disabled);
+    opacity: 0.65;
+    pointer-events: none;
 }
 
 .keycap--primary:hover,
@@ -96,7 +96,7 @@
     background-color: var(--accent-secondary);
 }
 
-/* Variant: Brand Logo */
+/* Keycap: Brand Logo */
 .keycap--logo {
     justify-content: center;
     width: 2.875rem;
@@ -106,7 +106,7 @@
     letter-spacing: var(--tracking-tighter);
 }
 
-/* Variant: Menu and Theme Toggle */
+/* Keycap: Menu & Theme Toggle */
 .keycap--theme,
 .keycap--menu {
     min-height: 2.75rem;
@@ -127,17 +127,17 @@
     transform: rotate(180deg);
 }
 
-/* Variant: Tech Keys */
+/* Keycap: Tech Stack Indicators */
 .keycap--tech {
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 3.875rem;
+    padding: 0;
     font-size: var(--font-size-base);
     pointer-events: none;
-    padding: 0;
 }
 
 .keycap--tech small {
@@ -146,25 +146,21 @@
     text-transform: initial;
 }
 
-/* Keycaps Media Queries */
-
 @media (min-width: 48rem) {
     .keycap--menu {
         display: none;
     }
 
     .keycap--tech {
-        height: 5.125rem;
         width: 5.75rem;
+        height: 5.125rem;
         font-size: var(--font-size-2xl);
     }
 }
 
-/* ==========================================================================
-   2. BADGES, TAGS & SECTION INDICATORS
-   ========================================================================== */
 
-/* Tag Chip */
+/* --- 2. Badges, Tags & Section Indicators --- */
+
 .tag {
     display: inline-block;
     padding: var(--space-xs) var(--space-sm);
@@ -178,12 +174,11 @@
     box-shadow: none;
 }
 
-/* Section Number Badge */
 .section-number {
     display: inline-flex;
     flex: none;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     width: 2.1875rem;
     height: 1.875rem;
     border: 1px solid var(--border-strong);
@@ -195,15 +190,14 @@
     box-shadow: var(--shadow-key-sm);
 }
 
-/* Eyebrow & Overline Labels */
 .overline,
 .section-eyebrow {
-    letter-spacing: var(--tracking-widest);
-    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
     font-size: var(--font-size-md);
     font-weight: var(--font-weight-bold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
     color: var(--text-primary);
-    margin-bottom: var(--space-sm);
 }
 
 .overline {
@@ -216,11 +210,10 @@
     display: inline-block;
     width: 1.875rem;
     height: 3px;
-    background-color: var(--accent-primary);
     margin-right: var(--space-sm);
+    background-color: var(--accent-primary);
 }
 
-/* Section Header Layout */
 .section-header {
     display: flex;
     align-items: flex-start;
@@ -234,15 +227,13 @@
     }
 }
 
-/* ==========================================================================
-   3. CASE STUDY CARDS
-   ========================================================================== */
 
-/* Card List & Container */
+/* --- 3. Case Study Cards --- */
+
 .case-study-list {
+    display: flex;
     flex-direction: column;
     gap: 28px;
-    display: flex;
 }
 
 .case-study {
@@ -253,15 +244,14 @@
     overflow: hidden;
 }
 
-/* Card Header & Header Labels */
 .case-study-header {
-    border-bottom: 1px solid var(--border-strong);
-    background: var(--accent-secondary);
-    justify-content: space-between;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1rem;
     padding: var(--space-xl) var(--space-2xl);
-    display: flex;
+    border-bottom: 1px solid var(--border-strong);
+    background: var(--accent-secondary);
 }
 
 .case-number {
@@ -273,22 +263,21 @@
 .privacy-label {
     font-size: var(--font-size-xs);
     font-weight: var(--font-weight-bold);
-    color: var(--text-on-accent);
-    text-transform: uppercase;
     letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--text-on-accent);
 }
 
-/* Card Body & Details Grid */
 .case-intro {
     margin: var(--space-5xl) var(--space-2xl);
 }
 
 .case-intro p {
+    max-width: var(--layout-prose-width);
     margin-top: var(--space-sm);
     font-size: 0.8125rem;
     line-height: var(--leading-relaxed);
     color: var(--text-secondary);
-    max-width: var(--layout-prose-width);
 }
 
 .case-intro ul {
@@ -343,11 +332,9 @@
     }
 }
 
-/* ==========================================================================
-   4. SKILLS PANELS
-   ========================================================================== */
 
-/* Panel List & Container */
+/* --- 4. Skills Panels --- */
+
 .skill-groups {
     display: flex;
     flex-direction: column;
@@ -355,16 +342,20 @@
 }
 
 .skill-group {
+    padding: var(--space-3xl) var(--space-2xl);
     border: 1px solid var(--border-strong);
     border-radius: var(--radius-md);
     background-color: var(--bg-surface-subtle);
-    padding: var(--space-3xl) var(--space-2xl);
 }
 
 .skill-group-dashed {
     border-style: dashed;
     border-width: 2px;
     background-color: transparent;
+}
+
+.skill-group h3 {
+    font-size: var(--font-size-3xl);
 }
 
 .skill-group p {
@@ -379,10 +370,6 @@
     gap: var(--space-md);
     margin-top: var(--space-2xl);
     pointer-events: none;
-}
-
-.skill-group h3 {
-    font-size: var(--font-size-3xl);
 }
 
 .skill-group .keycap {
@@ -405,9 +392,8 @@
     }
 }
 
-/* ==========================================================================
-   5. BUILDING CARDS
-   ========================================================================== */
+
+/* --- 5. Building Cards --- */
 
 .building-list {
     display: grid;
@@ -426,8 +412,8 @@
 
 .building-card-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     gap: var(--space-lg);
     margin-bottom: var(--space-3xl);
 }
