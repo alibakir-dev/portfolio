@@ -4,13 +4,16 @@
 
 /* --- 1. Header & Navigation --- */
 .site-header {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-top: var(--space-3xl);
     padding-bottom: var(--space-4xl);
     border-bottom: 1px solid var(--border-subtle);
+    background-color: var(--bg-canvas);
 }
 
 .header-actions {

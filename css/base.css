@@ -9,6 +9,16 @@
     box-sizing: border-box;
 }
 
+::selection {
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
+}
+
+::-moz-selection {
+    background-color: #ff400e;
+    color: var(--text-on-accent);
+}
+
 body,
 h1,
 h2,
@@ -39,6 +49,10 @@ body {
             transparent 23px,
             var(--bg-grid) 23px,
             var(--bg-grid) 24px);
+}
+
+html {
+    scroll-padding-top: 3.5rem;
 }
 
 /* --- 3. Typography --- */
