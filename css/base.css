@@ -82,3 +82,18 @@ h3 {
     outline: 2px solid var(--border-strong);
     outline-offset: 2px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0ms;
+        --transition-normal: 0ms;
+        --transition-slow: 0ms;
+    }
+}
