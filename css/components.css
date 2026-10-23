@@ -466,3 +466,33 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* --- 7. Figma-Style Cursor Pill --- */
+
+.cursor-pill {
+    position: fixed;
+    top: var(--cursor-y, -100px);
+    left: var(--cursor-x, -100px);
+    z-index: var(--z-modal);
+    max-width: 18rem;
+    padding: var(--space-xs) var(--space-md);
+    border: 1.5px solid var(--border-strong);
+    border-style: dashed;
+    border-radius: var(--radius-pill);
+    background-color: var(--bg-surface-subtle);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-snug);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.92);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+    pointer-events: none;
+}
+
+.cursor-pill.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}

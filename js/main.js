@@ -109,3 +109,60 @@ const footerObserver = new IntersectionObserver((entries) => {
 
 sections.forEach((section) => sectionObserver.observe(section));
 footerObserver.observe(footer);
+
+/* 4. Figma-Style Cursor Pill & 3-Strike Selection Easter Egg */
+
+const cursorPill = document.querySelector("[data-js-cursor-pill]");
+let pillHideTimerId = null;
+let selectionDebounceId = null;
+let lastSelectedText = ""
+
+document.addEventListener("pointermove", (event) => {
+    root.style.setProperty("--cursor-x", `${event.clientX + 14}px`);
+    root.style.setProperty("--cursor-y", `${event.clientY + 18}px`);
+}, { passive: true });
+
+function showCursorPill(message) {
+    if (!cursorPill) return;
+
+    clearTimeout(pillHideTimerId);
+    cursorPill.textContent = message;
+    cursorPill.classList.add("is-visible");
+
+    pillHideTimerId = setTimeout(() => {
+        cursorPill.classList.remove("is-visible");
+    }, 3500);
+}
+
+const selectionMessages = [
+    "Oh, you read by selecting the text? Me too!",
+    "You really like selecting texts, huh?",
+    "OK, that was the last one."
+]
+
+document.addEventListener("selectionchange", () => {
+    const currentCount = Number(sessionStorage.getItem("readerSelectionCount")) || 0;
+    if (currentCount >= selectionMessages.length) return;
+
+    clearTimeout(selectionDebounceId);
+
+    selectionDebounceId = setTimeout(() => {
+        const selectedText = window.getSelection().toString().trim();
+
+        if (!selectedText) {
+            lastSelectedText = "";
+            cursorPill.classList.remove("is-visible");
+            return;
+        }
+
+        if (selectedText.length >= 15 && selectedText !== lastSelectedText) {
+            lastSelectedText = selectedText;
+            const nextCount = currentCount + 1;
+            sessionStorage.setItem("readerSelectionCount", String(nextCount));
+
+            const message = selectionMessages[currentCount];
+
+            showCursorPill(message);
+        }
+    }, 450);
+})
