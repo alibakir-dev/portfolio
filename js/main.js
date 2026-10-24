@@ -166,3 +166,95 @@ document.addEventListener("selectionchange", () => {
         }
     }, 450);
 })
+
+/* --- 5. Direct Mail Click-to-Copy --- */
+
+const copyEmailLink = document.querySelector("[data-js-copy-email]");
+const copyBadge = document.querySelector("[data-js-copy-badge]");
+let copyBadgeTimerId = null;
+
+if (copyEmailLink) {
+    copyEmailLink.addEventListener("click", async (event) => {
+        event.preventDefault();
+
+        const emailAddress = "alibakirwork@gmail.com";
+
+        try {
+            await navigator.clipboard.writeText(emailAddress);
+
+            if (copyBadge) {
+                clearTimeout(copyBadgeTimerId);
+                copyBadge.textContent = "Copied to clipboard! ✓";
+                copyEmailLink.classList.add("is-copied");
+
+                copyBadgeTimerId = setTimeout(() => {
+                    copyBadge.textContent = "Click to copy";
+                    copyEmailLink.classList.remove("is-copied");
+                }, 2500);
+            }
+            if (typeof showCursorPill === "function") {
+                showCursorPill("Email copied to clipboard! 📋");
+            }
+
+        } catch (error) {
+            if (copyBadge) copyBadge.textContent = "Copy failed";
+        }
+    });
+}
+
+
+/* --- 6. Contact Form Two-Way Mailer --- */
+
+const contactForm = document.querySelector("[data-js-contact-form]");
+const formSubbmitButton = document.querySelector("[data-js-form-submit]");
+const formStatus = document.querySelector("[data-js-form-status]");
+
+const GOOGLE_SCRIPT_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxp-iugSlHV3B0pttSIgpZ7zP2j1sEFjxL9Ovzb6JUCmh-JEPj8l7yjLV57z0jAfryH/exec";
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Client-side Validation
+        if (!contactForm.checkValidity()) {
+            formStatus.textContent = "Pleas fill in all required fields.";
+            formStatus.className = "contact-form__status is-error";
+            return;
+        }
+
+        // Getting all the form data
+        const formData = new FormData(contactForm);
+        const payload = Object.fromEntries(formData.entries());
+
+        // Send Message to Sending...
+        formSubbmitButton.disbled = true;
+        formSubbmitButton.classList.add("keycap--disabled");
+        const originalButtonHtml = formSubbmitButton.innerHTML;
+        formSubbmitButton.innerHTML = "<span>Sending...</span>";
+        formStatus.textContent = "Delivering your message...";
+        formStatus.className = "contact-form__status";
+
+        // Try to send the emails
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+            });
+
+            // Success
+            formStatus.textContent = "Message sent! Check your inbox for confirmation ✓";
+            formStatus.className = "contact-form__status is-success";
+            contactForm.reset();
+
+        } catch (error) {
+            formStatus.textContent = "Failed to send. Please mail me directly.";
+            formStatus.className = "contact-form__status is-error";
+        } finally {
+            formSubbmitButton.disbled = false;
+            formSubbmitButton.classList.remove("keycap--disabled");
+            formSubbmitButton.innerHTML = originalButtonHtml;
+        }
+    })
+}

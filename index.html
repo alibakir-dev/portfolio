@@ -357,7 +357,72 @@
         <section id="contact" class="contact">
             <p class="overline">Have a role or project?</p>
             <h2 class="contact-title">Let's talk<span class="accent-dot">.</span></h2>
-            <a class="contact-email" href="mailto:alibakirwork@gmail.com">alibakirwork@gmail.com</a>
+
+            <!-- --- A. Contact Form --- -->
+            <form class="contact-form" data-js-contact-form novalidate>
+                <div class="contact-form__row">
+
+                    <!-- First Name Field -->
+                    <div class="contact-form__field">
+                        <label class="contact-form__label" for="first-name">First Name *</label>
+                        <input class="contact-form__input" type="text" id="first-name" name="firstName" required
+                            autocomplete="given-name" placeholder="John">
+                    </div>
+
+                    <!-- Last Name Field -->
+                    <div class="contact-form__field">
+                        <label class="contact-form__label" for="last-name">Last Name *</label>
+                        <input class="contact-form__input" type="text" id="last-name" name="lastName" required
+                            autocomplete="family-name" placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="contact-form__row">
+
+                    <!-- Email Field -->
+                    <div class="contact-form__field">
+                        <label class="contact-form__label" for="email">Email Address *</label>
+                        <input class="contact-form__input" type="text" id="email" name="email" required
+                            autocomplete="email" placeholder="john@example.com">
+                    </div>
+
+                    <!-- Company Field (Optional) -->
+                    <div class="contact-form__field">
+                        <label class="contact-form__label" for="copmant">Company (Optional)</label>
+                        <input class="contact-form__input" type="text" id="company" name="company" required
+                            autocomplete="organization" placeholder="Acme Inc.">
+                    </div>
+                </div>
+
+                <!-- Message -->
+                <div class="contact-form__field">
+                    <label class="contact-form__label" for="message">Your Message *</label>
+                    <textarea class="contact-form__textarea" name="message" id="message" rows="4" required
+                        placeholder="Hey Ali, I have an SFMC / Full Stack opportunity..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="contact-form__footer">
+                    <button class="keycap keycap--primary" type="submit" data-js-form-submit>
+                        <span>Send Message</span>
+                        <span aria-hidden="true">→</span>
+                    </button>
+
+                    <!-- Form Status -->
+                    <p class="contact-form__status" data-js-form-status aria-live="polite"></p>
+                </div>
+            </form>
+
+
+            <!-- --- B. Direct Email (Copy to Clipboard) --- -->
+            <div class="direct-mail">
+                <p class="direct-mail__hint">Or copy my email with one click:</p>
+                <a class="contact-email" href="mailto:alibakirwork@gmail.com" data-js-copy-email
+                    title="Click to copy email address">
+                    <span data-js-email-text>alibakirwork@gmail.com</span>
+                    <span class="contact-email__badge" data-js-copy-badge aria-hidden="true">Click to copy</span>
+                </a>
+            </div>
 
             <ul class="contact-actions">
                 <li><a class="keycap keycap--footer" href="https://www.linkedin.com/in/aliibakir/" target="_blank"
