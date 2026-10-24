@@ -451,3 +451,16 @@ if (paletteDialog) {
         });
     }
 }
+
+/* ==========================================================================
+   8. Header Scroll Shrink
+   Toggles compact padding state based on window scroll offset.
+   ========================================================================== */
+
+   const siteHeader = document.querySelector(".site-header");
+
+   window.addEventListener("scroll", () => {
+    if (!siteHeader) return;
+    const isScrolled = window.scrollY;
+    siteHeader.classList.toggle("is-scrolled", isScrolled);
+   }, { passive: true });

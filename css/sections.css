@@ -14,6 +14,12 @@
     padding-bottom: var(--space-4xl);
     border-bottom: 1px solid var(--border-subtle);
     background-color: var(--bg-canvas);
+    transition: padding var(--transition-normal);
+}
+
+.site-header.is-scrolled {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
 }
 
 .header-actions {
