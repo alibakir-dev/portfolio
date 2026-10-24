@@ -34,6 +34,13 @@
     box-shadow: var(--shadow-key-active);
 }
 
+.keycap.is-active {
+    background-color: var(--accent-primary);
+    color: var(--text-on-accent);
+    transform: translateY(2px);
+    box-shadow: var(--shadow-key-active);
+}
+
 .keycap:focus-visible {
     outline: 2px solid var(--accent-primary);
     outline-offset: 4px;
@@ -81,6 +88,16 @@
     box-shadow: var(--shadow-disabled);
     opacity: 0.65;
     pointer-events: none;
+}
+
+.keycap--palette {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--font-size-xs);
+}
+
+.palette-key kbd {
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .keycap--primary:hover,
@@ -458,4 +475,179 @@
     .building-list {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* --- 7. Figma-Style Cursor Pill --- */
+
+.cursor-pill {
+    position: fixed;
+    top: var(--cursor-y, -100px);
+    left: var(--cursor-x, -100px);
+    z-index: var(--z-modal);
+    max-width: 18rem;
+    padding: var(--space-xs) var(--space-md);
+    border: 1.5px solid var(--border-strong);
+    border-style: dashed;
+    border-radius: var(--radius-pill);
+    background-color: var(--bg-surface-subtle);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--leading-snug);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.92);
+    transition: opacity var(--transition-fast), transform var(--transition-fast), visibility var(--transition-fast);
+    pointer-events: none;
+}
+
+.cursor-pill.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* --- 8. Command Palette (Ctrl + K) --- */
+
+/* Dialog Container * Backdrop*/
+.palette-dialog {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 36rem;
+    width: calc(100% - 2rem);
+    z-index: var(--z-modal);
+    color: var(--text-primary);
+}
+
+.palette-dialog::backdrop {
+    background-color: rgba(18, 20, 15, 0.65);
+    backdrop-filter: blur(4px);
+}
+
+.palette-dialog__box {
+    background-color: var(--bg-surface);
+    border: 2px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-key-static);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header * Search Input */
+.palette-dialog__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lf) var(--space-xl);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.palette-dialog__search-icon {
+    font-size: var(--font-size-xl);
+    color: var(--accent-primary);
+}
+
+.palette-dialog__input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: var(--font-size-md);
+}
+
+.palette-dialog__close {
+    padding: var(--space-2xs) var(--space-xs);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xs);
+    background-color: var(--bg-canvas);
+    color: var(--text-secondary);
+    font-family: inherit;
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+}
+
+/* Command List * Items */
+.palette-dialog__list {
+    list-style: none;
+    margin: 0;
+    padding: var(--space-sm);
+    max-height: 18rem;
+    overflow-y: auto;
+}
+
+.palette-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.palette-item__content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.palette-item__icon {
+    color: var(--accent-primary);
+    font-weight: var(--font-weight-bold);
+}
+
+.palette-item__category {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wide);
+}
+
+.palette-item.is-selected {
+    background-color: var(--accent-secondary);
+    color: var(--text-on-accent);
+}
+
+.palette-item.is-selected .palette-item__icon,
+.palette-item.is-selected .palette-item__category {
+    color: var(--text-on-accent);
+}
+
+.palette-dialog__empty {
+    padding: var(--space-3xl);
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* Footer Shortcuts */
+.palette-dialog__footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-lg);
+    padding: var(--space-sm) var(--space-xl);
+    background-color: var(--bg-canvas);
+    border-top: 1px solid var(--border-subtle);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+.palette-dialog__footer kbd {
+    padding: 1px 4px;
+    border: 1px solid var(--border-subtle);
+    border-radius: 3px;
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
 }
