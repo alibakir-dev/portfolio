@@ -258,3 +258,196 @@ if (contactForm) {
         }
     })
 }
+
+/* ==========================================================================
+   7. Command Palette (Ctrl+K)
+   Accessible spotlight search & modal command controller using the HTML5 <dialog> API.
+   ========================================================================== */
+
+/**
+ * DOM Element References
+ */
+const paletteDialog = document.querySelector("[data-js-palette-dialog]");
+const paletteTrigger = document.querySelector("[data-js-palette-trigger]");
+const paletteInput = document.querySelector("[data-js-palette-input]");
+const paletteList = document.querySelector("[data-js-palette-list]");
+const paletteClose = document.querySelector("[data-js-palette-close]");
+
+/**
+ * Command Registry
+ * Flat array of action objects categorized by intent.
+ */
+const commands = [
+    { title: "Go to About", category: "Navigation", icon: "→", action: () => location.href = "#about" },
+    { title: "Go to Work", category: "Navigation", icon: "→", action: () => location.href = "#work" },
+    { title: "Go to Skills", category: "Navigation", icon: "→", action: () => location.href = "#skills" },
+    { title: "Go to Building", category: "Navigation", icon: "→", action: () => location.href = "#building" },
+    { title: "Go to Contact", category: "Navigation", icon: "→", action: () => location.href = "#contact" },
+    { title: "Toggle Theme (Light / Dark)", category: "Action", icon: "◑", action: () => themeToggle.click() },
+    { title: "Copy Email Address", category: "Action", icon: "📋", action: () => copyEmailLink.click() },
+    { title: "Download CV (PDF)", category: "Action", icon: "↓", action: () => window.open("assets/Ali-Bakir-CV.pdf") },
+    { title: "Open GitHub Profile", category: "Social", icon: "↗", action: () => window.open("https://github.com/alibakir-dev", "_blank") },
+    { title: "Open LinkedIn Profile", category: "Social", icon: "↗", action: () => window.open("https://www.linkedin.com/in/aliibakir/", "_blank") }
+];
+
+/**
+ * Local Component State
+ * Maintains active query results and currently focused keyboard item index.
+ */
+let filteredCommands = [...commands];
+let selectedIndex = 0;
+
+/**
+ * Template Renderer
+ * Transforms the filtered commands array into dynamic semantic list items.
+ */
+function renderPalette() {
+    if (!paletteList) return;
+
+    if (filteredCommands.length === 0) {
+        paletteList.innerHTML = `<li class="palette-dialog__empty">No commands found for "${paletteInput.value}"</li>`;
+        return;
+    }
+
+    paletteList.innerHTML = filteredCommands.map((cmd, index) => {
+        const isSelected = index === selectedIndex ? "is-selected" : "";
+        return `
+            <li class="palette-item ${isSelected}" data-index="${index}" role="option" aria-selected="${index === selectedIndex}">
+                <div class="palette-item__content">
+                    <span class="palette-item__icon" aria-hidden="true">${cmd.icon}</span>
+                    <span class="palette-item__title">${cmd.title}</span>
+                </div>
+                <span class="palette-item__category">${cmd.category}</span>
+            </li>
+        `;
+    }).join("");
+}
+
+/**
+ * Modal Lifecycle Handlers
+ * Uses native HTMLDialogElement API for top-layer elevation and scroll locking.
+ */
+function openPalette() {
+    if (!paletteDialog) return;
+    paletteDialog.showModal();
+    paletteInput.value = "";
+    filteredCommands = [...commands];
+    selectedIndex = 0;
+    renderPalette();
+    paletteInput.focus();
+}
+
+function closePalette() {
+    if (!paletteDialog) return;
+    paletteDialog.close();
+}
+
+/**
+ * Command Executor
+ * Closes dialog before executing callback to prevent UI blocking.
+ */
+function executeSelectedCommand() {
+    if (filteredCommands.length > 0 && filteredCommands[selectedIndex]) {
+        const targetCommand = filteredCommands[selectedIndex];
+        closePalette();
+        targetCommand.action();
+    }
+}
+
+/**
+ * Trigger & Backdrop Event Binding
+ */
+if (paletteTrigger) paletteTrigger.addEventListener("click", openPalette);
+if (paletteClose) paletteClose.addEventListener("click", closePalette);
+
+if (paletteDialog) {
+    paletteDialog.addEventListener("click", (event) => {
+        if (event.target === paletteDialog) {
+            closePalette();
+        }
+    });
+}
+
+/**
+ * Global Keyboard Shortcut (Ctrl+K / Cmd+K)
+ * Normalizes Meta key for macOS and Control key for Windows/Linux.
+ */
+document.addEventListener("keydown", (event) => {
+    const isMac = navigator.platform.toUpperCase().indexOf("MAC") >= 0;
+    const isModifierPressed = isMac ? event.metaKey : event.ctrlKey;
+
+    if (isModifierPressed && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        if (paletteDialog && paletteDialog.open) {
+            closePalette();
+        } else {
+            openPalette();
+        }
+    }
+});
+
+/**
+ * Real-time Query Filtering
+ * Substring matching against command titles and categories.
+ */
+if (paletteInput) {
+    paletteInput.addEventListener("input", () => {
+        const query = paletteInput.value.trim().toLowerCase();
+
+        filteredCommands = commands.filter((cmd) => {
+            return cmd.title.toLowerCase().includes(query) || cmd.category.toLowerCase().includes(query);
+        });
+
+        selectedIndex = 0;
+        renderPalette();
+    });
+}
+
+/**
+ * Keyboard Navigation & Execution within Palette Dialog
+ * Modulo arithmetic enables seamless wrap-around browsing.
+ */
+if (paletteDialog) {
+    paletteDialog.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown") {
+            event.preventDefault();
+            if (filteredCommands.length > 0) {
+                selectedIndex = (selectedIndex + 1) % filteredCommands.length;
+                renderPalette();
+            }
+        } else if (event.key === "ArrowUp") {
+            event.preventDefault();
+            if (filteredCommands.length > 0) {
+                selectedIndex = (selectedIndex - 1 + filteredCommands.length) % filteredCommands.length;
+                renderPalette();
+            }
+        } else if (event.key === "Enter") {
+            event.preventDefault();
+            executeSelectedCommand();
+        }
+    });
+
+    /**
+     * Mouse Hover Synchronization and Pointer Selection
+     */
+    if (paletteList) {
+        paletteList.addEventListener("mousemove", (event) => {
+            const item = event.target.closest(".palette-item");
+            if (item) {
+                const index = Number(item.dataset.index);
+                if (index !== selectedIndex) {
+                    selectedIndex = index;
+                    renderPalette();
+                }
+            }
+        });
+
+        paletteList.addEventListener("click", (event) => {
+            const item = event.target.closest(".palette-item");
+            if (item) {
+                selectedIndex = Number(item.dataset.index);
+                executeSelectedCommand();
+            }
+        });
+    }
+}
