@@ -90,9 +90,16 @@
     pointer-events: none;
 }
 
-.keycap--palette {
-    padding: var(--space-xs) var(--space-md);
-    font-size: var(--font-size-xs);
+.keycap--palette { 
+    display: none;
+}
+
+@media (min-width: 48rem) {
+    .keycap--palette {
+        display: inline-flex;
+        padding: var(--space-xs) var(--space-md);
+        font-size: var(--font-size-xs);
+    }
 }
 
 .palette-key kbd {
